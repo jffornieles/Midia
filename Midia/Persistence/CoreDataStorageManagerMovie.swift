@@ -65,10 +65,11 @@ class CoreDataStorageManagerMovie: FavoritesProvidable {
             if let price = movie.price {
                 movieManaged.price = price
             }
+            
             movie.authors?.forEach({ (authorName) in
-                let author = Author(context: context)
+                let author = MovieAuthor(context: context)
                 author.fullName = authorName
-                movieManaged.addToAuthors(author)
+                movieManaged.addToMovieAuthor(author)
             })
             do {
                 try context.save()

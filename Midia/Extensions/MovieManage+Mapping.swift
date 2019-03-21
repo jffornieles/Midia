@@ -12,8 +12,8 @@ extension MovieManaged {
     
     func mappedObject() -> Movie {
         
-        let authorsList = authors?.map({ (author) -> String in
-            let author = author as! Author
+        let authorsList = movieAuthor?.map({ (author) -> String in
+            let author = author as! MovieAuthor
             return author.fullName!
         })
         

@@ -2,8 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Author" representedClassName="Author" syncable="YES" codeGenerationType="class">
         <attribute name="fullName" attributeType="String" syncable="YES"/>
-        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="authors" inverseEntity="Book" syncable="YES"/>
-        <relationship name="movie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Movie" inverseName="authors" inverseEntity="Movie" syncable="YES"/>
+        <relationship name="book" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="authors" inverseEntity="Book" syncable="YES"/>
     </entity>
     <entity name="Book" representedClassName="BookManaged" syncable="YES" codeGenerationType="class">
         <attribute name="bookDescription" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,11 +22,16 @@
         <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="releaseDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="trackId" attributeType="String" syncable="YES"/>
-        <relationship name="authors" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Author" inverseName="movie" inverseEntity="Author" syncable="YES"/>
+        <relationship name="movieAuthor" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MovieAuthor" inverseName="movie" inverseEntity="MovieAuthor" syncable="YES"/>
+    </entity>
+    <entity name="MovieAuthor" representedClassName="MovieAuthor" syncable="YES" codeGenerationType="class">
+        <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="movie" maxCount="1" deletionRule="Nullify" destinationEntity="Movie" inverseName="movieAuthor" inverseEntity="Movie" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Author" positionX="-465.37109375" positionY="15.27734375" width="128" height="90"/>
+        <element name="Author" positionX="-465.37109375" positionY="15.27734375" width="128" height="75"/>
         <element name="Book" positionX="-726.078125" positionY="-43.875" width="128" height="178"/>
         <element name="Movie" positionX="-177.83984375" positionY="-41.69140625" width="128" height="150"/>
+        <element name="MovieAuthor" positionX="-522" positionY="36" width="128" height="75"/>
     </elements>
 </model>
