@@ -9,7 +9,8 @@ Para crear el ApiKeys.plist usa: File – New – File en Xcode y crea un archiv
 
 
 ## Mockups
-![](img/Captura_1.png)
+
+<img src="img/Captura_1.png" width="500">
 
 <img src="img/Captura_2.png" width="200">
 
