@@ -90,9 +90,11 @@ class ItunesMoviesAPIConsumerURLSession: MediaItemAPIConsumable {
             if let data = data {
                 do {
                     let decoder = JSONDecoder()
-                    let movie = try decoder.decode(Movie.self, from: data)
+                    let movie = try decoder.decode(MovieCollection.self, from: data)
                     DispatchQueue.main.async {
-                        success(movie)
+                        if let movie = movie.results?.first! {
+                            success(movie)
+                        }
                     }
                 } catch {
                     DispatchQueue.main.async {
