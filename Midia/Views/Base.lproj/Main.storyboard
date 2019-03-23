@@ -18,8 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="moy-Yh-WP3">
+                                <rect key="frame" x="16" y="44" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Books"/>
+                                    <segment title="Movies"/>
+                                    <segment title="Games" enabled="NO"/>
+                                    <segment title="TV Series" enabled="NO"/>
+                                </segments>
+                                <connections>
+                                    <action selector="selectedItem:" destination="BYZ-38-t0r" eventType="valueChanged" id="lKx-na-o6W"/>
+                                </connections>
+                            </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UiW-Qb-zH5">
-                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <rect key="frame" x="0.0" y="82" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TzK-y6-Pxa">
                                     <size key="itemSize" width="150" height="200"/>
@@ -90,7 +102,6 @@
                             <constraint firstItem="TfN-zw-ggy" firstAttribute="top" secondItem="Rd2-td-xBM" secondAttribute="bottom" constant="10" id="0gj-z1-w5f"/>
                             <constraint firstItem="Rd2-td-xBM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2UH-pH-cUP"/>
                             <constraint firstItem="UiW-Qb-zH5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5rF-qV-d0m"/>
-                            <constraint firstItem="UiW-Qb-zH5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="870-dt-lSN"/>
                             <constraint firstItem="TfN-zw-ggy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="FGQ-sY-49B"/>
                             <constraint firstItem="p7N-lM-TeM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FeM-3h-J8h"/>
                             <constraint firstItem="UiW-Qb-zH5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Jcm-IM-n5n"/>
@@ -98,6 +109,10 @@
                             <constraint firstItem="UiW-Qb-zH5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gDM-0V-wJQ"/>
                             <constraint firstItem="p7N-lM-TeM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gFp-pp-DZs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TfN-zw-ggy" secondAttribute="trailing" constant="15" id="gYg-rb-xm2"/>
+                            <constraint firstItem="UiW-Qb-zH5" firstAttribute="top" secondItem="moy-Yh-WP3" secondAttribute="bottom" constant="10" id="iFb-fv-nFw"/>
+                            <constraint firstItem="moy-Yh-WP3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oUS-ya-7Wc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="moy-Yh-WP3" secondAttribute="trailing" constant="16" id="r6t-0o-5KN"/>
+                            <constraint firstItem="moy-Yh-WP3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="uil-U3-i19"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -106,12 +121,13 @@
                         <outlet property="activityIndicatorView" destination="p7N-lM-TeM" id="e14-gX-WzM"/>
                         <outlet property="collectionView" destination="UiW-Qb-zH5" id="Ndp-Xt-Kdf"/>
                         <outlet property="failureEmojiLabel" destination="Rd2-td-xBM" id="Cig-wp-BBV"/>
+                        <outlet property="selectedItemOutlet" destination="moy-Yh-WP3" id="Ccd-Ij-iIW"/>
                         <outlet property="statusLabel" destination="TfN-zw-ggy" id="zFw-qm-fXH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992.79999999999995" y="27.436281859070466"/>
+            <point key="canvasLocation" x="992.79999999999995" y="27.339901477832512"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Cht-YH-41P">

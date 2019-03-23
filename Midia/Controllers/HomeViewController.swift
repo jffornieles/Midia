@@ -15,6 +15,7 @@ enum MediaItemViewControllerState {
     case ready
 }
 
+
 class HomeViewController: UIViewController {
 
     let mediaItemCellIdentifier = "mediaItemCell"
@@ -26,7 +27,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var failureEmojiLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-
+    @IBOutlet weak var selectedItemOutlet: UISegmentedControl!
+    
     var state: MediaItemViewControllerState = .ready {
         willSet {
             guard state != newValue else { return }
@@ -58,7 +60,11 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadMediaItems()
+    }
 
+    fileprivate func loadMediaItems() {
         state = .loading
         mediaItemProvider.getHomeMediaItems(onSuccess: { [weak self] (mediaItems) in
             self?.mediaItems = mediaItems
@@ -67,7 +73,19 @@ class HomeViewController: UIViewController {
             self?.state = .failure
         }
     }
-
+    
+    @IBAction func selectedItem(_ sender: UISegmentedControl) {
+        
+        let segmentIndex = selectedItemOutlet.selectedSegmentIndex
+        
+        saveItemKind(itemKind: segmentIndex)
+        
+        let currentMediaItemProvider = MediaItemProvider(withMediaItemKind: MediaItemKind(rawValue: segmentIndex)!)
+        
+        self.mediaItemProvider = currentMediaItemProvider
+ 
+        loadMediaItems()
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
@@ -101,3 +119,4 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 
 }
+

@@ -22,8 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             else {
             fatalError("Wrong initial setup")
         }
-
-        let currentMediaItemProvider = MediaItemProvider(withMediaItemKind: .movie)
+        
+        // Por defecto inicializamos con book
+        saveItemKind(itemKind: 0)
+        
+        let currentMediaItemProvider = MediaItemProvider(withMediaItemKind: MediaItemKind(rawValue: 0)!)
         homeViewController.mediaItemProvider = currentMediaItemProvider
         searchViewController.mediaItemProvider = currentMediaItemProvider
         favoritesViewController.mediaItemProvider = currentMediaItemProvider

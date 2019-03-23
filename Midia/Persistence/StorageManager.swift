@@ -27,7 +27,7 @@ class StorageManager {
             self.init(mediaItemKind: mediaItemKind, shared: CoreDataStorageManagerMovie())
             //self.init(mediaItemKind: mediaItemKind, shared: UserDefaultStorageManagerMovie())
         default:
-            fatalError("There is not \(mediaItemKind) yet!!")
+            fatalError("There is not this mediaItemKind yet!!")
         }
     }
     

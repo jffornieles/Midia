@@ -8,8 +8,10 @@
 
 import Foundation
 
-enum MediaItemKind: String {
+enum MediaItemKind: Int {
     case book
     case movie
     case game
+    case series
 }
+

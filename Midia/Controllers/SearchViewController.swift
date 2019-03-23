@@ -21,10 +21,17 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         collectionView.dataSource = self
         collectionView.delegate = self
         searchBar.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let itemKind = getItemKind()
+        mediaItemProvider = MediaItemProvider(withMediaItemKind: MediaItemKind(rawValue: itemKind)!)
+        searchBarSearchButtonClicked(searchBar)
     }
 
 }
@@ -65,6 +72,7 @@ extension SearchViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let queryParams = searchBar.text, !queryParams.isEmpty else {
+            print("return")
             return
         }
 

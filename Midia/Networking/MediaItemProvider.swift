@@ -6,7 +6,7 @@
 //  Copyright © 2019 Jose Francisco Fornieles. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class MediaItemProvider {
 
@@ -27,6 +27,10 @@ class MediaItemProvider {
              self.init(withMediaItemKind: mediaItemKind, apiConsumer: ItunesMoviesAPIConsumerURLSession())
             //self.init(withMediaItemKind: mediaItemKind, apiConsumer: ItunesMoviesAPIConsumerAlamofire())
         case .game:
+            fatalError("MediaItemKind not supported yet :( coming soon")
+//            let alertController = UIAlertController(title: nil, message: "MediaItemKind not supported yet :( coming soon.", preferredStyle: .alert)
+//            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        case .series:
             fatalError("MediaItemKind not supported yet :( coming soon")
         }
     }

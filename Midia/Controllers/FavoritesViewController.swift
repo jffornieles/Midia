@@ -19,6 +19,10 @@ class FavoritesViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let itemKind = getItemKind()        
+        
+        mediaItemProvider = MediaItemProvider(withMediaItemKind: MediaItemKind(rawValue: itemKind)!)
         let storageManager = StorageManager(mediaItemKind: mediaItemProvider.mediaItemKind)
         if let storedFavorites = storageManager.shared.getFavorites() {
             favorites = storedFavorites
@@ -57,3 +61,5 @@ extension FavoritesViewController: UITableViewDataSource {
     }
 
 }
+
+

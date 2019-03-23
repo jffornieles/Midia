@@ -68,6 +68,7 @@
 		8769283022426B4E0060420D /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8773A1262242595C0043A53A /* ApiKeys.swift */; };
 		8773A125224257D90043A53A /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8773A124224257D90043A53A /* ApiKeys.plist */; };
 		8773A1272242595C0043A53A /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8773A1262242595C0043A53A /* ApiKeys.swift */; };
+		87ABDF97224642B500A8721C /* UserDefaultSotorageItemKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABDF96224642B500A8721C /* UserDefaultSotorageItemKind.swift */; };
 		87E5CC46224162EA00CFEB59 /* ItunesMoviesAPIConsumerAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8709D74F22401FE6006CD441 /* ItunesMoviesAPIConsumerAlamofire.swift */; };
 		87E5CC47224162ED00CFEB59 /* ItunesMoviesAPIConsumerURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871FDC0C223FC66F0047A11E /* ItunesMoviesAPIConsumerURLSession.swift */; };
 		87E5CC482241630D00CFEB59 /* MovieCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871FDC08223FA7660047A11E /* MovieCollection.swift */; };
@@ -140,6 +141,7 @@
 		873F512D224405E100F68CC4 /* MovieManage+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieManage+Mapping.swift"; sourceTree = "<group>"; };
 		8773A124224257D90043A53A /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		8773A1262242595C0043A53A /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		87ABDF96224642B500A8721C /* UserDefaultSotorageItemKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultSotorageItemKind.swift; sourceTree = "<group>"; };
 		888542511EF44BFB37C8F8BB /* Pods-Midia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Midia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Midia/Pods-Midia.release.xcconfig"; sourceTree = "<group>"; };
 		9FCABCE3A12FF5375955FEE4 /* Pods-MidiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MidiaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MidiaTests/Pods-MidiaTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,6 +217,7 @@
 				144E664022371F7E005770BE /* StorageManager.swift */,
 				144E663E22371794005770BE /* UserDefaultStorageManagerBook.swift */,
 				873F51292243F09E00F68CC4 /* UserDefaultStorageManagerMovie.swift */,
+				87ABDF96224642B500A8721C /* UserDefaultSotorageItemKind.swift */,
 				148C6A7C2238510700E4C844 /* Core Data */,
 			);
 			path = Persistence;
@@ -537,6 +540,7 @@
 				871FDC09223FA7660047A11E /* MovieCollection.swift in Sources */,
 				8709D75022401FE6006CD441 /* ItunesMoviesAPIConsumerAlamofire.swift in Sources */,
 				873F512A2243F09E00F68CC4 /* UserDefaultStorageManagerMovie.swift in Sources */,
+				87ABDF97224642B500A8721C /* UserDefaultSotorageItemKind.swift in Sources */,
 				144E663F22371794005770BE /* UserDefaultStorageManagerBook.swift in Sources */,
 				1427A5902225E04C000F2E59 /* HomeViewController.swift in Sources */,
 				873F512C224403AA00F68CC4 /* CoreDataStorageManagerMovie.swift in Sources */,
