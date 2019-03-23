@@ -15,11 +15,11 @@ class MovieTest: XCTestCase {
     var movie: Movie!
     let encoder = JSONEncoder()
     let decoder = JSONDecoder()
-      let coverURL = URL(string: "http://books.google.com/books/content?id=qUW5js7ZD7UC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api")
+      let coverURL = URL(string: "https://is5-ssl.mzstatic.com/image/thumb/Video115/v4/f1/d4/cb/f1d4cb7f-ae17-dbae-7368-bf85fe1e64b3/source/100x100bb.jpg")
     
     override func setUp() {
         super.setUp()
-        movie = Movie(trackId: "12345", title: "title", authors: ["authors"], releaseDate: Date(timeIntervalSinceNow: 13213), description: "description", coverURL: coverURL, price: 5.5)
+        movie = Movie(trackId: "12345", title: "Interstellar", authors: ["Christopher Nolan"], releaseDate: Date(timeIntervalSinceNow: 13213), description: "description", coverURL: coverURL, price: 5.5)
     }
 
     override func tearDown() {
