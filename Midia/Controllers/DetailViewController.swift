@@ -100,7 +100,8 @@ class DetailViewController: UIViewController {
         if let price = mediaItem.price {
             buyButton.setTitle("Buy for \(price)$", for: .normal)
         } else {
-            buyButton.isHidden = true
+            buyButton.setTitle("Purchase not available", for: .normal)
+            buyButton.isEnabled = false
         }
 
     }
@@ -112,6 +113,7 @@ class DetailViewController: UIViewController {
     }
 
     @IBAction func didTapToggleFavorite(_ sender: Any) {
+        
         guard let favorite = detailedMediaItem else {
             return
         }
